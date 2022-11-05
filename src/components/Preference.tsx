@@ -12,7 +12,7 @@ const Preference = () => {
   return (
     <ScrollView style={styles.wrapper}>
       <View style={styles.boxStyle}>
-        <Text style={styles.textStyle}>Choose Your Preference...</Text>
+        <Text style={styles.textStyle}>Choose Your Preference</Text>
 
         <View style={styles.mainBox}>
           <View style={styles.box1}></View>
