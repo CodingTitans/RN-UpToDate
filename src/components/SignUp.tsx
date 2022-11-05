@@ -1,33 +1,63 @@
 import * as React from "react";
-import { View, Text, StyleSheet, SafeAreaView, Platform } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, Platform, TextInput, TouchableOpacity } from "react-native";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
+
 
 const SignUp = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
-      <View style={(styles.boxStyle, styles.box2)}>
-        <Text style={styles.textStyle}>Sign Up Today And</Text>
-        <Text style={styles.textStyle}>Discover Your Preffered News!</Text>
-        <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-        </View>
+      <Text style={styles.textStyle}>Sign Up Today And Discover Your Preffered News!</Text>
+      <TextInput placeholder={'First Name'} style={styles.inputBox}></TextInput>
+      <TextInput placeholder={'Last Name'} style={styles.inputBox}></TextInput>
+      <TextInput placeholder={'Email Address'} style={styles.inputBox}></TextInput>
+      <TextInput placeholder={'Phone Number'} style={styles.inputBox}></TextInput>
+      <TextInput placeholder={'Password'} style={styles.inputBox}></TextInput>
+      <TextInput placeholder={'Date of Birth'} style={styles.inputBox}></TextInput>
 
-        <View style={styles.checkbox}></View>
-        <View style={styles.signup}></View>
-        <View
-          style={{
-            borderBottomColor: "black",
-            borderBottomWidth: StyleSheet.hairlineWidth,
-          }}
-        />
-        <Text style={styles.acc_confimation}>
-          Already Have An Account? Sign In
-        </Text>
-        <View style={styles.SkipSignup}></View>
-      </View>
+      <BouncyCheckbox 
+        onPress={(isChecked: boolean) => {}}
+        fillColor="blue"
+        unfillColor="#fff"
+        text="Terms & Conditions"
+        style={{
+          marginTop: 20
+        }} 
+      />
+
+      <TouchableOpacity style={{
+        width: '70%',
+        padding: 10,
+        backgroundColor: 'blue',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        marginTop: 20
+      }}>
+        <Text style={{
+          color: '#fff'
+        }}>Sign up</Text>
+      </TouchableOpacity>
+
+      <View
+        style={{
+          borderBottomColor: "black",
+          borderBottomWidth: StyleSheet.hairlineWidth,
+          marginTop: 40,
+          marginBottom: 40
+        }}
+      />
+
+      <Text style={styles.accountConfimation}>
+        Already Have An Account? Sign In
+      </Text>
+
+      <TouchableOpacity style={styles.skipSignup}>
+        <Text style={{
+          color: '#fff',
+          fontSize: 14
+        }}>Skip Sign Up</Text>
+      </TouchableOpacity>
+
     </SafeAreaView>
   );
 };
@@ -36,25 +66,19 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     flexDirection: "column",
-  },
-  boxStyle: {
-    padding: 10,
     margin: 10,
+    padding: 10
   },
-  mainBox: {
-    justifyContent: "space-evenly",
+  textStyle: {
+    fontSize: 32,
+    textAlign: "center",
   },
-  box1: {
-    backgroundColor: "purple",
-    height: 60,
-    marginTop: 20,
-  },
-
-  box2: {
-    //backgroundColor: "green",
-    flex: 2.5,
-    justifyContent: "flex-start",
-    padding: 10,
+  inputBox: {
+    width: '100%',
+    height: 30,
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    marginTop: 20
   },
   signup: {
     backgroundColor: "purple",
@@ -65,55 +89,20 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginBottom: 30,
   },
-  SkipSignup: {
-    backgroundColor: "purple",
+  accountConfimation: {
+    fontSize: 14,
+    textAlign: "center",
+  },
+  skipSignup: {
+    backgroundColor: "blue",
     height: 40,
-    width: 200,
-    marginTop: 40,
+    width: 150,
+    marginTop: 20,
     justifyContent: "center",
+    alignItems: 'center',
     alignSelf: "flex-end",
     marginBottom: 30,
-  },
-  defaultContainer: {
-    flex: 1,
-    backgroundColor: "#ededed",
-    padding: 20,
-    margin: 20,
-  },
-  textStyle: {
-    fontSize: 29,
-    textAlign: "center",
-  },
-  checkbox: {
-    width: 250,
-    height: 20,
-    justifyContent: "space-evenly",
-    alignSelf: "flex-start",
-    backgroundColor: "purple",
-    marginTop: 10,
-  },
-  acc_confimation: {
-    fontSize: 25,
-    textAlign: "center",
-    paddingTop: 10,
-  },
-  horizontalLine: {
-    paddingBottom: 10,
-  },
-  //text styles
-
-  textH1Style: {
-    ...Platform.select({
-      ios: {
-        fontSize: 20,
-        fontWeight: "700",
-      },
-      android: {
-        fontSize: 30,
-        fontWeight: "bold",
-      },
-    }),
-    color: "white",
+    borderRadius: 30
   },
 });
 export default SignUp;
