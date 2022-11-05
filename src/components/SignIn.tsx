@@ -1,31 +1,45 @@
 import * as React from "react";
-import { View, Text, StyleSheet, SafeAreaView, Platform } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, Platform, TextInput, TouchableOpacity } from "react-native";
 
 const SignIn = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
-      <View style={(styles.boxStyle, styles.box2)}>
-        <Text style={styles.textStyle}>Sign In Today And</Text>
-        <Text style={styles.textStyle}>Discover What's New!</Text>
-        <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-        </View>
+      <Text style={styles.textStyle}>Sign In Today And Discover What's New!</Text>
+      
+      <TextInput placeholder="Your email address" style={styles.inputBox} />
+      <TextInput placeholder="Password" style={styles.inputBox} />
 
-        <View style={styles.signup}></View>
-        <View
-          style={{
-            borderBottomColor: "black",
-            borderBottomWidth: StyleSheet.hairlineWidth,
-          }}
-        />
-        <Text style={styles.acc_confimation}>
-          Create A New Account: Sign Up
-        </Text>
-        <View style={styles.SkipButton}>
-          <View style={styles.SkipSignup}></View>
-        </View>
-      </View>
+      <TouchableOpacity style={{
+        width: '70%',
+        padding: 10,
+        backgroundColor: 'blue',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        marginTop: 20
+      }}>
+        <Text style={{
+          color: '#fff'
+        }}>Sign In</Text>
+      </TouchableOpacity>
+
+      <View
+        style={{
+          borderBottomColor: "black",
+          borderBottomWidth: StyleSheet.hairlineWidth,
+          marginVertical: 40
+        }}
+      />
+      <Text style={styles.accConfimation}>
+        Create A New Account: Sign Up
+      </Text>
+
+      <TouchableOpacity style={styles.skipSignup}>
+        <Text style={{
+          color: '#fff',
+          fontSize: 14
+        }}>Skip Sign Up</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -34,25 +48,19 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     flexDirection: "column",
-  },
-  boxStyle: {
     padding: 10,
     margin: 10,
   },
-  mainBox: {
-    justifyContent: "space-evenly",
+  textStyle: {
+    fontSize: 29,
+    textAlign: "center",
   },
-  box1: {
-    backgroundColor: "purple",
-    height: 60,
-    marginTop: 20,
-  },
-
-  box2: {
-    //backgroundColor: "green",
-    flex: 2.5,
-    justifyContent: "flex-start",
-    padding: 10,
+  inputBox: {
+    width: '100%',
+    height: 30,
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    marginTop: 20
   },
   signup: {
     backgroundColor: "purple",
@@ -63,45 +71,21 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginBottom: 30,
   },
-  SkipSignup: {
-    backgroundColor: "purple",
-    height: 40,
-    width: 200,
-    marginTop: 40,
-    justifyContent: "flex-end",
-    alignSelf: "flex-end",
-    marginBottom: 30,
-  },
-  defaultContainer: {
-    flex: 1,
-    backgroundColor: "#ededed",
-    padding: 20,
-    margin: 20,
-  },
-  textStyle: {
-    fontSize: 29,
-    textAlign: "center",
-  },
-  checkbox: {
-    width: 250,
-    height: 20,
-    justifyContent: "space-evenly",
-    alignSelf: "flex-start",
-    backgroundColor: "purple",
-    marginTop: 10,
-  },
-  acc_confimation: {
-    fontSize: 25,
+  accConfimation: {
+    fontSize: 14,
     textAlign: "center",
     paddingTop: 10,
   },
-  horizontalLine: {
-    paddingBottom: 10,
-  },
-  SkipButton: {
-    flex: 3,
-    // backgroundColor: "black",
-    justifyContent: "flex-end",
+  skipSignup: {
+    backgroundColor: "blue",
+    height: 40,
+    width: 150,
+    marginTop: 20,
+    justifyContent: "center",
+    alignItems: 'center',
+    alignSelf: "flex-end",
+    marginBottom: 30,
+    borderRadius: 30
   },
 });
 export default SignIn;
