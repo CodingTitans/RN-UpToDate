@@ -5,8 +5,6 @@ const Blog = () => {
   return (
     <ScrollView style={styles.wrapper}>
       <View style={styles.boxStyle}>
-        <Text style={styles.textStyle}>Discover What's New!</Text>
-
         <View style={styles.mainBox}>
           <View style={styles.box2}></View>
           <Text style={styles.headingLine}>
@@ -50,7 +48,6 @@ const styles = StyleSheet.create({
   },
   boxStyle: {
     justifyContent: "space-evenly",
-    marginTop: 20,
   },
   mainBox: {
     justifyContent: "space-evenly",
@@ -61,13 +58,11 @@ const styles = StyleSheet.create({
     backgroundColor: "purple",
     height: 150,
     width: 150,
-    marginTop: 20,
   },
   box2: {
     backgroundColor: "purple",
     width: 390,
     height: 390,
-    marginTop: 20,
     marginBottom: 20,
   },
 

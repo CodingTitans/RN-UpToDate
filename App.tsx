@@ -1,8 +1,4 @@
-import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import FlexBoxTry from "./src/components/FlexBoxTry";
-import PageHeader from "./src/components/Header";
-import WelcomePage from "./src/components/WelcomePage";
 import SplashScreen from "./src/components/SplashScreen";
 import SignUp from "./src/components/SignUp";
 import SignIn from "./src/components/SignIn";
@@ -13,12 +9,12 @@ import Blog from "./src/components/Blog";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <SplashScreen></SplashScreen>
-      {/* <SignUp></SignUp> */}
-      {/* <SignIn></SignIn> */}
-      {/* <Preference></Preference> */}
-      {/* <Home></Home> */}
-      {/* <Blog></Blog> */}
+      {/* <SplashScreen /> */}
+      <SignUp />
+      {/* <SignIn /> */}
+      {/* <Preference /> */}
+      {/* <Home /> */}
+      {/* <Blog /> */}
     </SafeAreaView>
   );
 }
