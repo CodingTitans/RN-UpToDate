@@ -13,7 +13,7 @@ const Blog = () => {
             Justin Trudeau to remain Prime Minister of Canada
           </Text>
           <Text style={styles.resourceLine}>On Sep 21, 2021 | By NewsRoom</Text>
-          <Text style={styles.resourceLine}>
+          <Text style={styles.paragraphLine}>
             Prime Minister Justin Trudeau’s political gamble failed to pay off
             Monday when Canadian voters returned him to office but denied him
             the expanded bloc of power he had been seeking in Parliament.
@@ -92,5 +92,12 @@ const styles = StyleSheet.create({
     padding: 20,
     fontWeight: "bold",
   },
+  paragraphLine:{
+    fontSize: 16,
+    textAlign: "left",
+    alignSelf: "flex-start",
+    padding: 20,
+    fontWeight: "bold",
+  }
 });
 export default Blog;
