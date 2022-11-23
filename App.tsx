@@ -1,7 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import PageHeader from "./src/components/Header";
 import WelcomePage from "./src/components/WelcomePage";
-import SplashScreen from "./src/components/SplashScreen";
 import SignUp from "./src/pages/SignUp";
 import SignIn from "./src/pages/SignIn";
 import Preference from "./src/pages/Preference";
@@ -79,14 +78,14 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
-        {/* <SplashScreen /> */}
-
         <MyTabs />
         {/* <SignUp /> */}
         {/* <SignIn /> */}
         {/* <Preference /> */}
         {/* <Home /> */}
         {/* <Blog /> */}
+        {/* <Search /> */}
+        {/* <SearchResult /> */}
 
       </NavigationContainer>
     </SafeAreaView>
