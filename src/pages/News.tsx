@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 
-const Blog = () => {
+const News = () => {
   return (
     <ScrollView style={styles.wrapper}>
       <View style={styles.boxStyle}>
@@ -100,4 +100,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   }
 });
-export default Blog;
+export default News;
