@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import PageHeader from "./src/components/Header";
 import WelcomePage from "./src/components/WelcomePage";
@@ -83,11 +82,11 @@ export default function App() {
         {/* <SplashScreen /> */}
 
         <MyTabs />
-        {/* <SignUp></SignUp> */}
-        {/* <SignIn></SignIn> */}
-        {/* <Preference></Preference> */}
-        {/* <Home></Home> */}
-        {/* <Blog></Blog> */}
+        {/* <SignUp /> */}
+        {/* <SignIn /> */}
+        {/* <Preference /> */}
+        {/* <Home /> */}
+        {/* <Blog /> */}
 
       </NavigationContainer>
     </SafeAreaView>
