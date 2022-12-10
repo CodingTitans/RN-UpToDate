@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   Platform,
   ScrollView,
+  Image,
 } from "react-native";
 
 const Preference = () => {
@@ -15,24 +16,88 @@ const Preference = () => {
         <Text style={styles.textStyle}>Choose Your Preference</Text>
 
         <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
         </View>
         <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
         </View>
         <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
         </View>
         <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
         </View>
         <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
+        </View>
+        <View style={styles.mainBox}>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2022/09/02/13/45/paris-7427636_1280.jpg",
+            }}
+          ></Image>
+          <Image
+            style={styles.box1}
+            source={{
+              uri: "../assets/india.png",
+            }}
+          ></Image>
         </View>
       </View>
     </ScrollView>
