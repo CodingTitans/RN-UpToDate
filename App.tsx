@@ -93,11 +93,12 @@ export default function App() {
         {/*<MyTabs /> */}
         {/* <SignUp /> */}
         {/* <SignIn /> */}
-        <Preference />
-        {/* <Home /> */}
+        {/* <Preference />*/}
+        <Home />
         {/* <Blog /> */}
         {/* <Search /> */}
         {/* <SearchResult /> */}
+        {/* <News />*/}
       </NavigationContainer>
     </SafeAreaView>
   );
