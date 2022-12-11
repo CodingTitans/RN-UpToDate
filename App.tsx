@@ -91,10 +91,11 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
         {/*<MyTabs /> */}
-        {/* <SignUp /> */}
-        {/* <SignIn /> */}
+        {/*<SignUp />*/}
+        {/*<SignIn />*/}
+
         {/* <Preference />*/}
-        <Home />
+        {/*<Home />*/}
         {/* <Blog /> */}
         {/* <Search /> */}
         {/* <SearchResult /> */}
