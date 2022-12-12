@@ -1,45 +1,54 @@
-import * as React from "react";
-import { View, Text, StyleSheet, SafeAreaView, Platform, TextInput, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  Platform,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
-const SignIn = () => {
+const SignIn = ({ navigation }: {navigation: any}) => {
   return (
     <SafeAreaView style={styles.wrapper}>
-      <Text style={styles.textStyle}>Sign In Today And Discover What's New!</Text>
-      
+      <Text style={styles.textStyle}>
+        Sign In Today And Discover What's New!
+      </Text>
+
       <TextInput placeholder="Your email address" style={styles.inputBox} />
       <TextInput placeholder="Password" style={styles.inputBox} />
 
-      <TouchableOpacity style={{
-        width: '70%',
-        padding: 10,
-        backgroundColor: 'blue',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignSelf: 'center',
-        marginTop: 20
-      }}>
-        <Text style={{
-          color: '#fff'
-        }}>Sign In</Text>
+      <TouchableOpacity
+        style={{
+          width: "30%",
+          padding: 20,
+          backgroundColor: "blue",
+          justifyContent: "center",
+          alignItems: "center",
+          alignSelf: "center",
+          marginTop: 20,
+        }}
+      >
+        <Text
+          style={{
+            color: "#fff",
+          }}
+        >
+          Sign In
+        </Text>
       </TouchableOpacity>
 
       <View
         style={{
           borderBottomColor: "black",
           borderBottomWidth: StyleSheet.hairlineWidth,
-          marginVertical: 40
+          marginVertical: 40,
         }}
       />
-      <Text style={styles.accConfimation}>
-        Create A New Account: Sign Up
-      </Text>
 
-      <TouchableOpacity style={styles.skipSignup}>
-        <Text style={{
-          color: '#fff',
-          fontSize: 14
-        }}>Skip Sign Up</Text>
-      </TouchableOpacity>
+      <Text style={styles.accConfimation}>Create A New Account:
+        <Text onPress={() => navigation.navigate('SignUp')}>Sign Up</Text>
+      </Text>
     </SafeAreaView>
   );
 };
@@ -56,11 +65,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   inputBox: {
-    width: '100%',
-    height: 30,
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    marginTop: 20
+    width: "100%",
+    height: 50,
+    borderBottomColor: "black",
+    borderWidth: 1,
+    paddingLeft: 20,
+    marginTop: 20,
   },
   signup: {
     backgroundColor: "purple",
@@ -82,10 +92,14 @@ const styles = StyleSheet.create({
     width: 150,
     marginTop: 20,
     justifyContent: "center",
-    alignItems: 'center',
+    alignItems: "center",
     alignSelf: "flex-end",
+
     marginBottom: 30,
-    borderRadius: 30
+    borderRadius: 30,
   },
 });
+
+SignIn.displayName = "SignIn"
+
 export default SignIn;

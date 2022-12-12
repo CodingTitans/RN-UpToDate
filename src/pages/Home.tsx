@@ -70,4 +70,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+
+Home.displayName = "Home"
+
 export default Home;

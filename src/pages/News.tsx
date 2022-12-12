@@ -95,4 +95,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   }
 });
+
+News.displayName = "News"
+
 export default News;

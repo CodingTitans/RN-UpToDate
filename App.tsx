@@ -1,5 +1,4 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import PageHeader from "./src/components/Header";
 import WelcomePage from "./src/components/WelcomePage";
 import SignUp from "./src/pages/SignUp";
 import SignIn from "./src/pages/SignIn";
@@ -12,17 +11,28 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faGlobe, faAddressCard, faUser } from "@fortawesome/free-solid-svg-icons";
+import StackNav from "./src/components/StackNav";
+import Profile from "./src/pages/Profile";
 
 const Tab = createBottomTabNavigator();
 
+
+const HomeNav = () => <StackNav components={[Home, News]} />
+const PreferenceNav = () => <StackNav components={[Preference, News]} />
+const SignInNav = () => <StackNav components={[SignIn, SignUp, Profile]} />
+
+
 function MyTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator 
+      screenOptions={{
+        headerShown: false
+      }}
+    >
       <Tab.Screen 
         name="Home" 
-        component={Home}
+        component={HomeNav}
         options={{
-          title: '',
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faHouse} />
@@ -33,9 +43,8 @@ function MyTabs() {
 
       <Tab.Screen 
         name="Country"
-        component={Preference}
+        component={PreferenceNav}
         options={{
-          title: '',
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faGlobe} />
@@ -48,7 +57,6 @@ function MyTabs() {
         name="About Us"
         component={News}
         options={{
-          title: '',
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faAddressCard} />
@@ -59,9 +67,8 @@ function MyTabs() {
 
       <Tab.Screen 
         name="Profile"
-        component={SignIn}
+        component={SignInNav}
         options={{
-          title: '',
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faUser} />
@@ -78,14 +85,8 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
+
         <MyTabs />
-        {/* <SignUp /> */}
-        {/* <SignIn /> */}
-        {/* <Preference /> */}
-        {/* <Home /> */}
-        {/* <Blog /> */}
-        {/* <Search /> */}
-        {/* <SearchResult /> */}
 
       </NavigationContainer>
     </SafeAreaView>
