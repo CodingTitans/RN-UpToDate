@@ -6,15 +6,12 @@ const StackNav = ({ components }: { components: any[]}) => {
   console.log(components)
   
   return (
-    <Stack.Navigator 
-      initialRouteName={components[0].displayName} 
-      screenOptions={{
-        headerShown: false
-      }}
-    >
+    <Stack.Navigator initialRouteName={components[0].displayName}>
       {
         components.map((c, index) => (
-          <Stack.Screen key={index} name={c.displayName} component={c} />
+          <Stack.Screen key={index} name={c.displayName} component={c} options={{
+            headerBackVisible: true
+          }} />
         ))
       }
     </Stack.Navigator>

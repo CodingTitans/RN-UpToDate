@@ -1,32 +1,39 @@
 import * as React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { Container, Row, Col } from 'react-bootstrap';
 
-const Home = () => {
+import NewsCard from "../components/Card";
+
+const Home = ({ navigation }: { navigation: any }) => {
   return (
     <ScrollView style={styles.wrapper}>
-      <View style={styles.boxStyle}>
-        <Text style={styles.textStyle}>Discover What's New!</Text>
+      <Container>
+        <Row>
+          <Col>
+            <NewsCard navigation={navigation} />
+          </Col>
+        </Row>
 
-        <View style={styles.mainBox}>
-          <View style={styles.box2}></View>
-        </View>
-        <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-        </View>
-        <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-        </View>
-        <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-        </View>
-        <View style={styles.mainBox}>
-          <View style={styles.box1}></View>
-          <View style={styles.box1}></View>
-        </View>
-      </View>
+        {
+          [1,2,3,4,5].map(i => (
+            <Row key={i} className="mt-3">
+              <Col>
+                <NewsCard navigation={navigation} />
+              </Col>
+
+              <Col>
+                <NewsCard navigation={navigation} />
+              </Col>
+            </Row>
+          ))
+        }
+
+      </Container>
+      
+      
+
+
+      
     </ScrollView>
   );
 };

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import WelcomePage from "./src/components/WelcomePage";
 import SignUp from "./src/pages/SignUp";
@@ -14,15 +15,17 @@ import { faHouse, faGlobe, faAddressCard, faUser } from "@fortawesome/free-solid
 import StackNav from "./src/components/StackNav";
 import Profile from "./src/pages/Profile";
 
-const Tab = createBottomTabNavigator();
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+const Tab = createBottomTabNavigator();
 
 const HomeNav = () => <StackNav components={[Home, News]} />
 const PreferenceNav = () => <StackNav components={[Preference, News]} />
 const SignInNav = () => <StackNav components={[SignIn, SignUp, Profile]} />
 
 
-function MyTabs() {
+const MyTabs = () => {
   return (
     <Tab.Navigator 
       screenOptions={{
@@ -57,6 +60,7 @@ function MyTabs() {
         name="About Us"
         component={News}
         options={{
+          headerShown: true,
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faAddressCard} />
@@ -82,20 +86,29 @@ function MyTabs() {
 
 
 export default function App() {
+  const [isWelcome, setIsWelcome] = useState(true)
+
+  setTimeout(() => setIsWelcome(false), 1000)
+
+  
   return (
     <SafeAreaView style={styles.container}>
-      <NavigationContainer>
 
-        <MyTabs />
-
-      </NavigationContainer>
+      {
+        isWelcome
+          ? (<WelcomePage />)
+          : (
+              <NavigationContainer>
+                <MyTabs />
+              </NavigationContainer>
+            )
+      }
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#f1f1f1",
+    flex: 1
   },
 });
