@@ -1,5 +1,5 @@
+import { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import PageHeader from "./src/components/Header";
 import WelcomePage from "./src/components/WelcomePage";
 import SignUp from "./src/pages/SignUp";
 import SignIn from "./src/pages/SignIn";
@@ -12,17 +12,30 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faGlobe, faAddressCard, faUser } from "@fortawesome/free-solid-svg-icons";
+import StackNav from "./src/components/StackNav";
+import Profile from "./src/pages/Profile";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+const HomeNav = () => <StackNav components={[Home, News]} />
+const PreferenceNav = () => <StackNav components={[Preference, News]} />
+const SignInNav = () => <StackNav components={[SignIn, SignUp, Profile]} />
+
+
+const MyTabs = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator 
+      screenOptions={{
+        headerShown: false
+      }}
+    >
       <Tab.Screen 
         name="Home" 
-        component={Home}
+        component={HomeNav}
         options={{
-          title: '',
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faHouse} />
@@ -33,9 +46,8 @@ function MyTabs() {
 
       <Tab.Screen 
         name="Country"
-        component={Preference}
+        component={PreferenceNav}
         options={{
-          title: '',
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faGlobe} />
@@ -48,7 +60,7 @@ function MyTabs() {
         name="About Us"
         component={News}
         options={{
-          title: '',
+          headerShown: true,
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faAddressCard} />
@@ -59,9 +71,8 @@ function MyTabs() {
 
       <Tab.Screen 
         name="Profile"
-        component={SignIn}
+        component={SignInNav}
         options={{
-          title: '',
           tabBarIcon: ({ focused }) => {
             return focused
               ? <FontAwesomeIcon color="blue" icon={faUser} />
@@ -75,26 +86,29 @@ function MyTabs() {
 
 
 export default function App() {
+  const [isWelcome, setIsWelcome] = useState(true)
+
+  setTimeout(() => setIsWelcome(false), 1000)
+
+  
   return (
     <SafeAreaView style={styles.container}>
-      <NavigationContainer>
-        <MyTabs />
-        {/* <SignUp /> */}
-        {/* <SignIn /> */}
-        {/* <Preference /> */}
-        {/* <Home /> */}
-        {/* <Blog /> */}
-        {/* <Search /> */}
-        {/* <SearchResult /> */}
 
-      </NavigationContainer>
+      {
+        isWelcome
+          ? (<WelcomePage />)
+          : (
+              <NavigationContainer>
+                <MyTabs />
+              </NavigationContainer>
+            )
+      }
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#f1f1f1",
+    flex: 1
   },
 });
