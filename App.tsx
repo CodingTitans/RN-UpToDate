@@ -6,6 +6,7 @@ import SignIn from "./src/pages/SignIn";
 import Preference from "./src/pages/Preference";
 import Home from "./src/pages/Home";
 import News from "./src/pages/News";
+import Icon from "react-native-ionicons";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -90,16 +91,32 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
-        {/*<MyTabs /> */}
-        {/*<SignUp />*/}
-        {/*<SignIn />*/}
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
 
-        {/* <Preference />*/}
-        {/*<Home />*/}
-        {/* <Blog /> */}
-        {/* <Search /> */}
-        {/* <SearchResult /> */}
-        {/* <News />*/}
+              if (route.name === "Home") {
+                iconName = focused
+                  ? "ion-icon-apps"
+                  : "ios-information-circle-outline";
+              } else if (route.name === "Settings") {
+                iconName = focused ? "ios-list" : "ios-list-outline";
+              }
+
+              // You can return any component that you like here!
+              return <Icon name="ios-home" />;
+            },
+            tabBarActiveTintColor: "tomato",
+            tabBarInactiveTintColor: "gray",
+          })}
+        >
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Preference" component={Preference} />
+          <Tab.Screen name="news" component={News} />
+          <Tab.Screen name="Sign In" component={SignIn} />
+          <Tab.Screen name="Sign Up" component={SignUp} />
+        </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaView>
   );
