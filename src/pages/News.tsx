@@ -1,12 +1,17 @@
 import * as React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 
 const News = () => {
   return (
     <ScrollView style={styles.wrapper}>
       <View style={styles.boxStyle}>
         <View style={styles.mainBox}>
-          <View style={styles.box2}></View>
+          <Image
+            style={styles.box2}
+            source={{
+              uri: "https://www.europarl.europa.eu/resources/library/images/20220323PHT26126/20220323PHT26126_original.jpg",
+            }}
+          ></Image>
           <Text style={styles.headingLine}>
             Justin Trudeau to remain Prime Minister of Canada
           </Text>
@@ -87,12 +92,12 @@ const styles = StyleSheet.create({
     padding: 20,
     fontWeight: "bold",
   },
-  paragraphLine:{
+  paragraphLine: {
     fontSize: 16,
     textAlign: "left",
     alignSelf: "flex-start",
     padding: 20,
     fontWeight: "bold",
-  }
+  },
 });
 export default News;
