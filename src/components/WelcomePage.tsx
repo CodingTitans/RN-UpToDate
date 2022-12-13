@@ -1,28 +1,37 @@
-import { Image, StyleSheet } from "react-native"
-import { Container, Row, Col } from "react-bootstrap"
+import { Image, StyleSheet, Text, View } from "react-native"
 
 const WelcomePage = () => {
   return (
-    <Container className="d-flex justify-content-center align-items-center flex-column vh-100">
-      <Row>
-        <Col >
+    <View style={styles.wrapper}>
+      <View>
           <Image style={styles.iconStyle} source={require("./../../assets/splash.png")} />
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col>
-          <h2> UpToDate - News App </h2>
-        </Col>
-      </Row>
-    </Container>
+      </View>
+      <View style={styles.mt}>
+        <Text style={styles.textStyle}> UpToDate - News App </Text>
+      </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: '100%'
+  },
   iconStyle: {
     width: 250,
     height: 250,
   },
+  mt: {
+    marginTop: 32
+  },
+  textStyle: {
+    fontSize: 28,
+    fontWeight: 'bold'
+  }
 });
 
 export default WelcomePage;

@@ -1,40 +1,34 @@
 import * as React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
-import { Container, Row, Col } from 'react-bootstrap';
+import { View, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 import NewsCard from "../components/Card";
 
 const Home = ({ navigation }: { navigation: any }) => {
   return (
-    <ScrollView style={styles.wrapper}>
-      <Container>
-        <Row>
-          <Col>
+    <SafeAreaView style={styles.wrapper}>
+      <ScrollView>
+        <View style={styles.cardContainer}>
+          <View>
             <NewsCard navigation={navigation} />
-          </Col>
-        </Row>
+          </View>
 
-        {
-          [1,2,3,4,5].map(i => (
-            <Row key={i} className="mt-3">
-              <Col>
-                <NewsCard navigation={navigation} />
-              </Col>
+          {
+            [1,2,3,4,5].map(i => (
+              <View key={i} style={styles.cardContainer}>
+                <View style={styles.doubleContainer}>
+                  <NewsCard navigation={navigation} />
+                </View>
 
-              <Col>
-                <NewsCard navigation={navigation} />
-              </Col>
-            </Row>
-          ))
-        }
+                <View style={styles.doubleContainer}>
+                  <NewsCard navigation={navigation} />
+                </View>
+              </View>
+            ))
+          }
 
-      </Container>
-      
-      
-
-
-      
-    </ScrollView>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -43,27 +37,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
   },
-  boxStyle: {
-    justifyContent: "space-evenly",
-    marginTop: 20,
+  cardContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   },
-  mainBox: {
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    flexDirection: "row",
-    marginTop: 20,
-  },
-  box1: {
-    backgroundColor: "purple",
-    height: 150,
-    width: 150,
-    marginTop: 20,
-  },
-  box2: {
-    backgroundColor: "purple",
-    width: 350,
-    height: 350,
-    marginTop: 20,
+  doubleContainer: {
+    width: '50%'
   },
 
   defaultContainer: {

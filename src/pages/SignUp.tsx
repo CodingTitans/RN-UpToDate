@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-const SignUp = () => {
+const SignUp = ({ navigation }: { navigation: any }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <Text style={styles.textStyle}>
@@ -72,19 +72,9 @@ const SignUp = () => {
       />
 
       <Text style={styles.accountConfimation}>
-        Already Have An Account? Sign In
+        Already Have An Account?
+        <Text onPress={() => navigation.navigate('SignIn')}>Sign In</Text>
       </Text>
-
-      <TouchableOpacity style={styles.skipSignup}>
-        <Text
-          style={{
-            color: "#fff",
-            fontSize: 14,
-          }}
-        >
-          Skip Sign Up
-        </Text>
-      </TouchableOpacity>
     </SafeAreaView>
   );
 };

@@ -10,12 +10,10 @@ import News from "./src/pages/News";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faGlobe, faAddressCard, faUser } from "@fortawesome/free-solid-svg-icons";
 import StackNav from "./src/components/StackNav";
 import Profile from "./src/pages/Profile";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import FontAwesome from "@expo/vector-icons/FontAwesome"
 
 
 const Tab = createBottomTabNavigator();
@@ -38,8 +36,8 @@ const MyTabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return focused
-              ? <FontAwesomeIcon color="blue" icon={faHouse} />
-              : <FontAwesomeIcon icon={faHouse} />
+              ? <FontAwesome name="home" color={"blue"} />
+              : <FontAwesome name="home" />
           }
         }}
       />
@@ -50,8 +48,8 @@ const MyTabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return focused
-              ? <FontAwesomeIcon color="blue" icon={faGlobe} />
-              : <FontAwesomeIcon icon={faGlobe} />
+              ? <FontAwesome color="blue" name={"globe"} />
+              : <FontAwesome name={"globe"} />
           }
         }}
       />
@@ -63,8 +61,8 @@ const MyTabs = () => {
           headerShown: true,
           tabBarIcon: ({ focused }) => {
             return focused
-              ? <FontAwesomeIcon color="blue" icon={faAddressCard} />
-              : <FontAwesomeIcon icon={faAddressCard} />
+              ? <FontAwesome color="blue" name={"address-card"} />
+              : <FontAwesome name={"address-card"} />
           }
         }}
       />
@@ -75,8 +73,8 @@ const MyTabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return focused
-              ? <FontAwesomeIcon color="blue" icon={faUser} />
-              : <FontAwesomeIcon icon={faUser} />
+              ? <FontAwesome color="blue" name={"user"} />
+              : <FontAwesome name={"user"} />
           }
         }}
       />
