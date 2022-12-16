@@ -6,6 +6,7 @@ import SignIn from "./src/pages/SignIn";
 import Preference from "./src/pages/Preference";
 import Home from "./src/pages/Home";
 import News from "./src/pages/News";
+import About from "./src/pages/About";
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -55,8 +56,8 @@ const MyTabs = () => {
       />
 
       <Tab.Screen
-        name="About Us"
-        component={News}
+        name="About"
+        component={About}
         options={{
           headerShown: true,
           tabBarIcon: ({ focused }) => {
