@@ -25,13 +25,13 @@ const SignInNav = () => <StackNav components={[SignIn, SignUp, Profile]} />
 
 const MyTabs = () => {
   return (
-    <Tab.Navigator 
+    <Tab.Navigator
       screenOptions={{
         headerShown: false
       }}
     >
-      <Tab.Screen 
-        name="Home" 
+      <Tab.Screen
+        name="Home"
         component={HomeNav}
         options={{
           tabBarIcon: ({ focused }) => {
@@ -42,7 +42,7 @@ const MyTabs = () => {
         }}
       />
 
-      <Tab.Screen 
+      <Tab.Screen
         name="Country"
         component={PreferenceNav}
         options={{
@@ -54,7 +54,7 @@ const MyTabs = () => {
         }}
       />
 
-      <Tab.Screen 
+      <Tab.Screen
         name="About Us"
         component={News}
         options={{
@@ -67,7 +67,7 @@ const MyTabs = () => {
         }}
       />
 
-      <Tab.Screen 
+      <Tab.Screen
         name="Profile"
         component={SignInNav}
         options={{
@@ -88,7 +88,7 @@ export default function App() {
 
   setTimeout(() => setIsWelcome(false), 1000)
 
-  
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -96,10 +96,10 @@ export default function App() {
         isWelcome
           ? (<WelcomePage />)
           : (
-              <NavigationContainer>
-                <MyTabs />
-              </NavigationContainer>
-            )
+            <NavigationContainer>
+              <MyTabs />
+            </NavigationContainer>
+          )
       }
     </SafeAreaView>
   );

@@ -4,10 +4,11 @@ const WelcomePage = () => {
   return (
     <View style={styles.wrapper}>
       <View>
-          <Image style={styles.iconStyle} source={require("./../../assets/splash.png")} />
+        <Image style={styles.iconStyle} source={require("./../../assets/splash.png")} />
       </View>
       <View style={styles.mt}>
-        <Text style={styles.textStyle}> UpToDate - News App </Text>
+        <Text style={styles.textStyle}> UptoDate </Text>
+        <Text style={styles.textStyle}> News App </Text>
       </View>
     </View>
   )

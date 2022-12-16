@@ -8,11 +8,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const SignIn = ({ navigation }: {navigation: any}) => {
+const SignIn = ({ navigation }: { navigation: any }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <Text style={styles.textStyle}>
-        Sign In Today And Discover What's New!
+        Sign in today and
+      </Text>
+      <Text style={styles.textStyle}>
+        Discover What's New!
       </Text>
 
       <TextInput placeholder="Your email address" style={styles.inputBox} />
@@ -21,12 +24,13 @@ const SignIn = ({ navigation }: {navigation: any}) => {
       <TouchableOpacity
         style={{
           width: "30%",
-          padding: 20,
+          padding: 15,
           backgroundColor: "blue",
+          borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
           alignSelf: "center",
-          marginTop: 20,
+          marginTop: 22,
         }}
       >
         <Text
@@ -34,7 +38,7 @@ const SignIn = ({ navigation }: {navigation: any}) => {
             color: "#fff",
           }}
         >
-          Sign In
+          Sign in
         </Text>
       </TouchableOpacity>
 
@@ -46,8 +50,8 @@ const SignIn = ({ navigation }: {navigation: any}) => {
         }}
       />
 
-      <Text style={styles.accConfimation}>Create A New Account:
-        <Text onPress={() => navigation.navigate('SignUp')}>Sign Up</Text>
+      <Text style={styles.accConfimation}>Don't have an account?
+        <Text onPress={() => navigation.navigate('SignUp')}> Sign Up</Text>
       </Text>
     </SafeAreaView>
   );
@@ -84,7 +88,7 @@ const styles = StyleSheet.create({
   accConfimation: {
     fontSize: 14,
     textAlign: "center",
-    paddingTop: 10,
+    paddingTop: 8,
   },
   skipSignup: {
     backgroundColor: "blue",

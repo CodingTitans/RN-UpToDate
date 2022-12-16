@@ -5,15 +5,14 @@ const NewsCard = ({ navigation }: { navigation: any }) => {
   return (
     <Pressable onPress={() => navigation.navigate('News')}>
       <View style={styles.wrapper}>
-        <ImageBackground source={{ uri: 'https://via.placeholder.com/350x150' }} resizeMode={'cover'} style={styles.image} />
+        <ImageBackground source={{ uri: 'https://media.npr.org/assets/img/2022/12/12/2012-037864-lg-041b10ab25936420ced3632b1ff6e8229fd5e851-s1600-c85.webp' }} resizeMode={'cover'} style={styles.image} />
         <View style={styles.contentWrapper}>
           <View>
-            <Text style={styles.title}>Card title</Text>
+            <Text style={styles.title}>Fusion breakthrough could be an energy game-changer</Text>
           </View>
-            <Text style={styles.body}>
-              This is a wider card with supporting text below as a natural lead-in
-              to additional content. This content is a little bit longer.
-            </Text>
+          <Text style={styles.body}>
+            Scientists have reached a major milestone in the pursuit of nuclear fusion, the process that powers the stars and could one day provide a globally accessible, long-term supply of carbon-free energy.
+          </Text>
           <Text>Last updated 3 mins ago</Text>
         </View>
       </View>
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 200
+    height: 220
   }
 });
 

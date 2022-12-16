@@ -1,60 +1,45 @@
+import { faBorderStyle } from "@fortawesome/free-solid-svg-icons";
 import { View, Text, Image, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const News = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView>
-        <View style={styles.mt}>
+        <View>
           <View>
             <View>
-              <Image source={{ uri: "https://via.placeholder.com/350x150" }} style={ styles.image } />
+              <Image source={{ uri: "https://media.npr.org/assets/img/2022/12/12/2012-037864-lg-041b10ab25936420ced3632b1ff6e8229fd5e851-s1600-c85.webp" }} style={styles.image} />
             </View>
           </View>
 
-          <View style={styles.mt}>
+          <View>
             <View>
-              <Text style={styles.resourceLine}>On Sep 21, 2021 | By NewsRoom</Text>
+              <Text style={styles.resourceLine}>On Dec 12, 2022 | By NewsRoom</Text>
             </View>
           </View>
 
-          <View style={styles.mt}>
+          <View>
             <View>
               <Text style={styles.headingLine}>
-                Justin Trudeau to remain Prime Minister of Canada
+                Fusion breakthrough could be climate, energy game-changer
               </Text>
             </View>
           </View>
 
-          <View style={styles.mt}>
+          <View>
             <View>
               <Text style={styles.paragraphLine}>
-                Prime Minister Justin Trudeau’s political gamble failed to pay off
-                Monday when Canadian voters returned him to office but denied him
-                the expanded bloc of power he had been seeking in Parliament.
-                Unofficial election results on Monday indicated that while he would
-                remain as prime minister, it would again be as the head of a
-                minority government. In August, with his approval ratings high, Mr.
-                Trudeau called a “snap election,” summoning voters to the polls two
-                years before he had to. The goal, he said, was to obtain a strong
-                mandate for his Liberal Party to lead the nation out of the pandemic
-                and into recovery. Trudeau said he plans to run again when the next
-                election is held, which must be by 2025. “As I’ve said a number of
-                times, I am planning on continuing to serve Canadians through and
-                beyond the next election,” Trudeau said. But there are widespread
-                doubts that he will do so, given that he would have been in power
-                for 10 years, has seen a drop in his popularity and a rise in
-                animosity toward him in much of western Canada. Trudeau is still
-                remembered for evoking the prospect of “sunny ways” when he took
-                office in 2015 at age 43, the second-youngest Canadian premier ever.
-                There have been setbacks since then, but he has been reelected
-                twice.
+                Scientists have reached a major milestone in the pursuit of nuclear fusion, the process that powers the stars and could one day provide a globally accessible, long-term supply of carbon-free energy.
+                U.S. government officials said the breakthrough was achieved last week at the National Ignition Facility at Lawrence Livermore National Laboratory, the site of a long-running effort to achieve fusion by blasting specially designed targets with powerful laser beams.
+                During a test on Dec. 5, the nuclear reaction triggered in a tiny target released about 50 per cent more energy than it took to trigger the reaction with a powerful blast from the laser. But experts caution that Tuesday’s exciting news should be tempered with the reality of how far scientists have yet to go to turn fusion into a useful energy source.
+                The result marks the first time any such experiment has achieved a net energy gain – a critical threshold that is the primary goal of fusion research.
               </Text>
             </View>
           </View>
         </View>
       </ScrollView>
     </SafeAreaView>
-    
+
   );
 };
 
@@ -67,25 +52,26 @@ const styles = StyleSheet.create({
   headingLine: {
     fontSize: 29,
     textAlign: "left",
+    fontWeight: "bold",
+    padding: 10
   },
   resourceLine: {
     fontSize: 15,
     textAlign: "left",
     alignSelf: "flex-start",
     fontWeight: "bold",
+    padding: 10
   },
-  paragraphLine:{
+  paragraphLine: {
     fontSize: 16,
     textAlign: "left",
     alignSelf: "flex-start",
+    padding: 10
   },
   image: {
     height: 250,
     width: "100%"
   },
-  mt: {
-    marginTop: 12
-  }
 });
 
 News.displayName = "News"
