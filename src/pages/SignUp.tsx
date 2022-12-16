@@ -14,8 +14,9 @@ const SignUp = ({ navigation }: { navigation: any }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <Text style={styles.textStyle}>
-        Sign Up Today And Discover Your Preffered News!
+        Create an Account
       </Text>
+
       <TextInput placeholder={"First Name"} style={styles.inputBox}></TextInput>
       <TextInput placeholder={"Last Name"} style={styles.inputBox}></TextInput>
       <TextInput
@@ -33,20 +34,21 @@ const SignUp = ({ navigation }: { navigation: any }) => {
       ></TextInput>
 
       <BouncyCheckbox
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => { }}
         fillColor="blue"
         unfillColor="#fff"
-        text="Terms & Conditions"
+        text="I accept the Terms & Conditions"
         style={{
-          marginTop: 20,
+          marginTop: 22,
         }}
       />
 
       <TouchableOpacity
         style={{
           width: "30%",
-          padding: 10,
+          padding: 15,
           backgroundColor: "blue",
+          borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
           alignSelf: "center",
@@ -67,13 +69,13 @@ const SignUp = ({ navigation }: { navigation: any }) => {
           borderBottomColor: "black",
           borderBottomWidth: StyleSheet.hairlineWidth,
           marginTop: 40,
-          marginBottom: 40,
+          marginBottom: 30,
         }}
       />
 
       <Text style={styles.accountConfimation}>
         Already Have An Account?
-        <Text onPress={() => navigation.navigate('SignIn')}>Sign In</Text>
+        <Text onPress={() => navigation.navigate('SignIn')}> Sign in</Text>
       </Text>
     </SafeAreaView>
   );
@@ -84,17 +86,18 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     margin: 10,
-    padding: 10,
+    padding: 15,
   },
   textStyle: {
-    fontSize: 32,
+    fontSize: 30,
     textAlign: "center",
   },
   inputBox: {
     width: "100%",
-    height: 30,
+    height: 50,
     borderBottomColor: "black",
-    bborderWidth: 1,
+    borderWidth: 1,
+    borderStroke: 10,
     paddingLeft: 20,
     marginTop: 20,
   },

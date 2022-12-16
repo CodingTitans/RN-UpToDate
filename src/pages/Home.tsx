@@ -13,7 +13,7 @@ const Home = ({ navigation }: { navigation: any }) => {
           </View>
 
           {
-            [1,2,3,4,5].map(i => (
+            [1, 2, 3, 4, 5].map(i => (
               <View key={i} style={styles.cardContainer}>
                 <View style={styles.doubleContainer}>
                   <NewsCard navigation={navigation} />
